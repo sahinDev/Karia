@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karia Digital Solutions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header img {
+            max-height: 50px;
+            margin-left: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+        .hero {
+            background: url('Hero Section Karia Digital Solutions .png') no-repeat center center/cover;
+            text-align: center;
+            color: #fff;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero a {
+            display: inline-block;
+            background: #1abc9c;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .hero a:hover {
+            background: #16a085;
+        }
+
+        .section {
+            padding: 3rem 1rem;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .services,
+        .portfolio,
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #16a085;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background: #1abc9c;
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #16a085;
+        }
+
+        .modern-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1rem;
+
+        }
+
+        #whatAshawarma-Portfpolio {
+            background: url('Portfolio.png');
+            background-size: contain;
+            min-height: 20vh;
+        }
+
+        #about-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+        #about-content img {
+            max-width: 30%;
+            padding-right: 2%;
+        }
+
+        #about-content p {
+            text-align: justify;
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            /* Modern, clean font */
+            font-size: 1rem;
+            /* Base font size */
+            line-height: 1.6;
+            /* Spacing between lines */
+            color: #333;
+            /* Neutral text color for readability */
+            margin-bottom: 1.5rem;
+            /* Space below each paragraph */
+            letter-spacing: 0.5px;
+            /* Slight spacing for modern look */
+            text-align: justify;
+            /* Aligns text neatly */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero a {
+                font-size: 1rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .services,
+            .portfolio,
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .hero a {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            #whatAshawarma-Portfpolio {
+                background: url('Portfolio.png') no-repeat center;
+                background-size: contain;
+
+            }
+
+            #about-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+            }
+
+            #about-content img {
+                max-width: 50%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#"><img src="Logo.png" alt="Logo"></a>
+        <h1>Karia Digital Solutions</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Helping Your Business Thrive Digitally</h2>
+        <p>We specialize in providing digital solutions to help businesses expand their reach, enhance customer service,
+            and embrace the power of technology.</p>
+        <a href="#contact">Let’s Work Together</a>
+    </section>
+    <section id="about" class="section">
+        <h2>About Karia Digital Solutions</h2>
+        <div id="about-content">
+            <img src="about.jpg" alt="">
+            <p>Welcome to our Canada-based consulting company, where innovation meets excellence. Our mission is to
+                empower businesses like yours with cutting-edge digital and software development solutions. We
+                specialize in optimizing your online presence and enhancing customer service capabilities, enabling you
+                to reach new heights of success. Let us help you connect with your audience more effectively, drive
+                growth, and transform your vision into reality. Together, we’ll build a smarter, more connected future
+                for your business.</p>
+        </div>
+
+    </section>
+    <section id="services" class="section">
+        <h2>Services</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Custom Software Development</h3>
+                <p>Unique software tailored to meet your business goals.</p>
+            </div>
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Modern, responsive websites that elevate your brand.</p>
+            </div>
+            <div class="card">
+                <h3>Mobile App Development</h3>
+                <p>Seamless apps for both Android and iOS platforms.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Solutions</h3>
+                <p>Scalable and secure cloud-based systems for modern businesses.</p>
+            </div>
+            <div class="card">
+                <h3>Social Media</h3>
+                <ul class="modern-list">
+                    <li>Social Media Application Development: Build custom tools and platforms to manage social media
+                        campaigns, analyze trends, and streamline content publishing.</li>
+                    <li> API Integration for Social Platforms: Integrate APIs from Facebook, Instagram, Twitter, and
+                        others to enable seamless data exchange and analytics for client businesses.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <div class="portfolio">
+            <a href="https://whatashawarma.ca/" target="_blank">
+                <div class="card" id="whatAshawarma-Portfpolio">
+
+                </div>
+            </a>
+            <!-- <div class="card">
+                <h3>Fitness Tracking App</h3>
+                <p>A cross-platform app for tracking workouts and progress.</p>
+            </div>
+            <div class="card">
+                <h3>E-commerce Website</h3>
+                <p>A responsive platform for a boutique shop.</p>
+            </div> -->
+        </div>
+    </section>
+    <!-- <section id="testimonials" class="section">
+        <h2>Testimonials</h2>
+        <div class="testimonials">
+            <div class="card">
+                <p>"John’s expertise transformed our system into a modern tool. Highly recommend!"</p>
+                <p><strong>- Sarah M.</strong></p>
+            </div>
+            <div class="card">
+                <p>"Working with John was a fantastic experience. He exceeded our expectations."</p>
+                <p><strong>- Kevin L.</strong></p>
+            </div>
+        </div>
+    </section> -->
+    <!-- <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <div class="contact-form">
+            <form>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section> -->
+    <footer id="contact">
+        <p>Email: karia@info.ca</p>
+        <p>Phone: +1 437 335 0144</p>
+        <Address>Toronto, ON M6G 2V9 </Address>
+        <br><br><br>
+        <p>© 2025 Karia Digital Solutions. All Rights Reserved.</p>
+        <!-- <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p> -->
+    </footer>
+</body>
+
+</html>
